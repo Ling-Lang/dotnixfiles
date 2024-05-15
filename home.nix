@@ -13,6 +13,7 @@
     packages = with pkgs; [
       neofetch
       btop
+      docker
       zsh-autosuggestions
     ];
   };

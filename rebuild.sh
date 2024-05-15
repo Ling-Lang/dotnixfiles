@@ -12,12 +12,28 @@
 # A rebuild script that commits on a successful build
 set -e
 
+# Default flake path
+flake_path="./"
+
+# Parse command-line arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --full)
+            full_rebuild=true
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
+
 #cd into nix dir
 pushd ~/nix
 
 # Edit your config
 $EDITOR configuration.nix
-
 
 # Early return if no changes were detected (thanks @singiamtel!)
 if git diff --quiet '*.nix'; then
@@ -36,13 +52,22 @@ git diff -U0 '*.nix'
 echo "NixOS Rebuilding..."
 # sudo nixos-rebuild switch --flake ~/nix/
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake ./ 2>&1 | tee nixos-switch.log
-grep --color error nixos-switch.log && exit 1
+if [ "$full_rebuild" = true ]; then
+    echo "Performing full rebuild..."
+    home-manager switch --flake "$flake_path" 2>&1 | tee home-manager.log
+    sudo nixos-rebuild switch --flake "$flake_path" 2>&1 | tee nixos-switch.log
+    grep --color error nixos-switch.log && exit 1
+    grep --color error home-manager.log && exit 1
+else
+    echo "Performing shallow build"
+    sudo nixos-rebuild switch --flake "$flake_path" 2>&1 | tee nixos-switch.log
+    grep --color error home-manager.log && exit 1
+fi
 
 # Get current generation metadata
-current=$(nixos-rebuild --flake ./ list-generations | grep current)
+current=$(nixos-rebuild --flake "$flake_path" list-generations | grep current)
 
-# Commit all changes witih the generation metadata
+# Commit all changes with the generation metadata
 git commit -am "$current"
 
 # Back to where you were

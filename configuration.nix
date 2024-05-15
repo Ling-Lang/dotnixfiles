@@ -21,6 +21,10 @@
   networking.hostName = "nixos"; # Define your hostname.
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+  ];
+  # font.packages = with pkgs; [(nerdfonts.override {fonts = ["JetBrainsMono"];})];
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
