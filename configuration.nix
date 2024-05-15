@@ -8,7 +8,7 @@
     ./system/hardware-configuration.nix
     ./system/disk-config.nix
   ];
-  # General Stuff #
+  #eneral Stuff #
   hardware.bluetooth.enable = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   hardware.bluetooth.powerOnBoot = true;

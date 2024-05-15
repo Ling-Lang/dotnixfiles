@@ -56,12 +56,12 @@ if [ "$full_rebuild" = true ]; then
     echo "Performing full rebuild..."
     home-manager switch --flake "$flake_path" 2>&1 | tee log/home-manager.log
     sudo nixos-rebuild switch --flake "$flake_path" 2>&1 | tee log/nixos-switch.log
-    grep --color error log/nixos-switch.log && exit 1
-    grep --color error log/home-manager.log && exit 1
+    grep --color "error" log/nixos-switch.log && exit 1
+    grep --color "error" log/home-manager.log && exit 1
 else
     echo "Performing shallow build"
     sudo nixos-rebuild switch --flake "$flake_path" 2>&1 | tee log/nixos-switch.log
-    grep --color error log/home-manager.log && exit 1
+    grep --color "error" log/home-manager.log && exit 1
 fi
 
 # Get current generation metadata
