@@ -80,7 +80,7 @@
       alacritty
       discord
       psst
-      xrdp
+      x2goclient
     ];
     shell = pkgs.zsh;
   };
