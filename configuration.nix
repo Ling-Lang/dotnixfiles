@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
+    ./system/hardware-configuration.nix
     ./system/disk-config.nix
   ];
   # General Stuff #
