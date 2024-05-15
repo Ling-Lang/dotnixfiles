@@ -76,7 +76,6 @@
       neovim
       eza
       vscode-fhs
-      zsh
       alacritty
       discord
       psst
@@ -92,6 +91,7 @@
     alejandra
     git
     libnotify
+    zsh
   ];
 
   environment.shells = [

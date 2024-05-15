@@ -69,7 +69,7 @@ current=$(nixos-rebuild --flake "$flake_path" list-generations | grep current)
 
 # Commit all changes with the generation metadata
 git commit -am "$current"
-
+git push
 # Back to where you were
 popd
 
