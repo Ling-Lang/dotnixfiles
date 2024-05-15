@@ -11,7 +11,7 @@
       theme = "robbyrussell";
     };
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/nix/";
+      rebuild = "sh ~/nix/rebuild.sh";
       flake = "sudo nix flake update ";
       config = "sudo nvim ~/nix/configuration.nix";
       home = "home-manager switch --flake ~/nix/";
