@@ -12,11 +12,12 @@
 # A rebuild script that commits on a successful build
 set -e
 
+#cd into nix dir
+pushd ~/nix
+
 # Edit your config
 $EDITOR configuration.nix
 
-# cd to your config dir
-pushd ~/nix
 
 # Early return if no changes were detected (thanks @singiamtel!)
 if git diff --quiet '*.nix'; then

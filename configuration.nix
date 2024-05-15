@@ -75,6 +75,7 @@
       zsh
       alacritty
       discord
+      psst
     ];
     shell = pkgs.zsh;
   };
