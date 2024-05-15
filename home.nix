@@ -14,7 +14,6 @@
       neofetch
       btop
       zsh-autosuggestions
-      discord
     ];
   };
   programs.bash = {

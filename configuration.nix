@@ -19,6 +19,8 @@
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiInstallAsRemovable = true;
   networking.hostName = "nixos"; # Define your hostname.
+  programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
@@ -72,6 +74,7 @@
       vscode-fhs
       zsh
       alacritty
+      discord
     ];
     shell = pkgs.zsh;
   };
@@ -83,6 +86,7 @@
     home-manager
     alejandra
     git
+    libnotify
   ];
 
   environment.shells = [
