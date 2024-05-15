@@ -6,7 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./disk-config.nix
+    ./system/disk-config.nix
   ];
   # General Stuff #
   hardware.bluetooth.enable = true;

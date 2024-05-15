@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [./zsh.nix];
+  imports = [./modules/zsh.nix];
   nixpkgs.config.allowUnfree = true;
   home = {
     username = "dylan";
