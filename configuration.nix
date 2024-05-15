@@ -80,7 +80,6 @@
       alacritty
       discord
       psst
-      x2goclient
     ];
     shell = pkgs.zsh;
   };
