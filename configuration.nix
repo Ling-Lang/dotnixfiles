@@ -80,6 +80,7 @@
       alacritty
       discord
       psst
+      etcher
     ];
     shell = pkgs.zsh;
   };
