@@ -42,7 +42,6 @@
     packages = with pkgs; [
       firefox
       neofetch
-      neovim
       eza
       vscode-fhs
       alacritty
@@ -60,6 +59,7 @@
     git
     libnotify
     zsh
+    neovim
   ];
 
   environment.shells = [
