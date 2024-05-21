@@ -25,7 +25,8 @@
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   programs.zsh.enable = true;
   time.timeZone = "Europe/Berlin";
-
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["dylan"];
   # Display environment #
   services.xserver.enable = true;
   services.xserver.displayManager.sddm.enable = true;
