@@ -61,6 +61,7 @@
     libnotify
     zsh
     neovim
+    wget
   ];
 
   environment.shells = [
