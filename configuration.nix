@@ -48,6 +48,8 @@
       alacritty
       discord
       psst
+      htop
+      prusa-slicer
     ];
     shell = pkgs.zsh;
   };
