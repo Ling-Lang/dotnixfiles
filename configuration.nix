@@ -50,6 +50,7 @@
       psst
       htop
       prusa-slicer
+      libsForQt5.yakuake
     ];
     shell = pkgs.zsh;
   };
