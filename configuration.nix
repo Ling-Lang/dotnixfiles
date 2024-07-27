@@ -51,6 +51,7 @@
       htop
       prusa-slicer
       libsForQt5.yakuake
+      isoimagewriter
     ];
     shell = pkgs.zsh;
   };

@@ -8,7 +8,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = ["git"];
-      theme = "daveverwer";
+      theme = "daveverwersc";
     };
     shellAliases = {
       rebuild = "sh ~/nix/rebuild.sh";
